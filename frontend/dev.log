@@ -1,0 +1,149 @@
+
+> intervue-poll-frontend@0.1.0 dev
+> vite
+
+
+  VITE v5.4.21  ready in 147 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+2:52:55 PM [vite] page reload src/pages/Student.tsx
+2:54:54 PM [vite] page reload src/pages/Student.tsx
+3:56:10 PM [vite] page reload src/pages/Student.tsx
+3:56:56 PM [vite] page reload src/pages/Student.tsx
+3:57:15 PM [vite] page reload src/pages/Teacher.tsx
+3:57:23 PM [vite] page reload src/pages/Teacher.tsx
+4:13:51 PM [vite] page reload src/pages/Teacher.tsx
+4:14:15 PM [vite] page reload src/pages/PollHistory.tsx
+4:14:58 PM [vite] page reload src/pages/Student.tsx
+4:15:10 PM [vite] page reload src/pages/Student.tsx
+4:15:24 PM [vite] page reload src/pages/PollHistory.tsx
+4:15:42 PM [vite] page reload src/pages/Student.tsx
+4:27:44 PM [vite] page reload src/App.tsx
+4:28:21 PM [vite] page reload src/components/ChatPopup.tsx
+4:29:48 PM [vite] page reload src/pages/Teacher.tsx
+4:29:49 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+4:29:49 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8
+  
+  The symbol "duration" has already been declared
+  111|    const serverTime = activePoll?.__serverTime
+  112|    const startTime = activePoll?.startTime
+  113|    const duration = activePoll?.duration
+     |          ^
+  114|    const { remaining } = usePollTimer(startTime, duration, serverTime)
+  115|  
+  
+      at failureErrorWithLog (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+4:30:15 PM [vite] page reload src/pages/PollHistory.tsx
+4:30:15 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+4:30:15 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8
+  
+  The symbol "duration" has already been declared
+  111|    const serverTime = activePoll?.__serverTime
+  112|    const startTime = activePoll?.startTime
+  113|    const duration = activePoll?.duration
+     |          ^
+  114|    const { remaining } = usePollTimer(startTime, duration, serverTime)
+  115|  
+  
+      at failureErrorWithLog (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+4:32:36 PM [vite] page reload src/pages/Student.tsx
+4:32:36 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+4:32:36 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8
+  
+  The symbol "duration" has already been declared
+  111|    const serverTime = activePoll?.__serverTime
+  112|    const startTime = activePoll?.startTime
+  113|    const duration = activePoll?.duration
+     |          ^
+  114|    const { remaining } = usePollTimer(startTime, duration, serverTime)
+  115|  
+  
+      at failureErrorWithLog (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+4:33:01 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8
+  
+  The symbol "duration" has already been declared
+  111|    const serverTime = activePoll?.__serverTime
+  112|    const startTime = activePoll?.startTime
+  113|    const duration = activePoll?.duration
+     |          ^
+  114|    const { remaining } = usePollTimer(startTime, duration, serverTime)
+  115|  
+  
+      at failureErrorWithLog (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+4:33:07 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8: ERROR: The symbol "duration" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/amritpalsingh/Desktop/intervue/frontend/src/pages/Teacher.tsx:113:8
+  
+  The symbol "duration" has already been declared
+  111|    const serverTime = activePoll?.__serverTime
+  112|    const startTime = activePoll?.startTime
+  113|    const duration = activePoll?.duration
+     |          ^
+  114|    const { remaining } = usePollTimer(startTime, duration, serverTime)
+  115|  
+  
+      at failureErrorWithLog (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/amritpalsingh/Desktop/intervue/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+4:33:22 PM [vite] page reload src/pages/Teacher.tsx
+4:36:48 PM [vite] page reload src/components/ChatPopup.tsx
