@@ -1,0 +1,61 @@
+
+> intervue-poll-backend@0.1.0 dev
+> ts-node-dev --respawn --transpile-only src/index.ts
+
+[INFO] 14:46:28 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+Connected to MongoDB
+Server listening on http://localhost:4000
+socket connected FzazEnVAtCr2wKhmAAAc
+socket connected 3SUGZSLgSiUpJkPVAAAf
+socket connected 2Wrptg7E62Rznj62AAAi
+socket connected Xtz87u7QHBMJE9IVAAAl
+socket connected LbI5ER2dTA52Eh6wAAAo
+socket connected ZOoXsVU1kAW6s0yOAAAr
+socket connected 2Uiwwrk6QW34ypu8AAAu
+socket connected QfWuwRU6FxHpT7MIAAAx
+socket connected EyaZMs5R_lGRX0ucAAA0
+socket connected Z_IZZfKGiiQV1YmjAAA3
+socket connected TVauCWQzYCE6XCe4AAA6
+socket connected AJ4g1FJ1k_2dNizOAAA9
+socket connected gX-Ru-GKr8N7zNtvAABA
+[INFO] 15:55:24 Restarting: /Users/amritpalsingh/Desktop/intervue/backend/src/socket/pollSocket.ts has been modified
+Connected to MongoDB
+Server listening on http://localhost:4000
+socket connected 3-9UgU3awluFhYGcAAAC
+socket connected QwnchWZFwMvytj45AAAF
+socket connected Q2qje5n0nwDnfDXgAAAI
+socket connected -NzVvBRFYNFWScGrAAAv
+socket connected HtW-R9ZF5-9bLMqxAAA2
+socket connected _QLJK2E0vcOwN7ulAAA5
+socket connected Jqzq1k-KFBfYbnm0AAA8
+socket connected 5yM5F62fwMBZ_8zjAAA_
+socket connected DMwlJyKzUdqDCSY1AABC
+[INFO] 16:10:45 Restarting: /Users/amritpalsingh/Desktop/intervue/backend/src/services/pollService.ts has been modified
+Connected to MongoDB
+Server listening on http://localhost:4000
+socket connected 553amzEfejcXpHsvAAAB
+[INFO] 16:11:46 Restarting: /Users/amritpalsingh/Desktop/intervue/backend/src/routes/pollRoutes.ts has been modified
+Connected to MongoDB
+Server listening on http://localhost:4000
+socket connected 40xEM1vh6Iw0DgXQAAAB
+[INFO] 16:12:32 Restarting: /Users/amritpalsingh/Desktop/intervue/backend/src/socket/pollSocket.ts has been modified
+Connected to MongoDB
+Server listening on http://localhost:4000
+socket connected lAXgz35wYgHIHe24AAAB
+socket connected RlD79l5Upd_bsof1AAAE
+socket connected JtUAn1KT48Xz8IADAAAH
+socket connected zXiUKfIBNnJMGDOyAAAK
+socket connected qVXqDV7s9GHz8ImpAAAN
+socket connected Sp-X6XPgQtUZBpNyAAAQ
+socket connected 8MBDWlzdk4cQ57_UAAAT
+socket connected QaI-VbU-GfhlrMrIAAAW
+socket connected T8Ll3pHhiPfKy7K2AAAZ
+socket connected 74P7FbVkU9uMdvy3AAAc
+socket connected ZgxkHiyh5MZynICzAAAf
+socket connected XVsa_wERAoF4O3TCAAAi
+socket connected rn2fzhcVZqcUXiHBAAAl
+socket connected uDMv9UPJjCwGAdCbAAAo
+socket connected RBzoz4GYERtzyN7lAAAr
+socket connected _TBJQO1HtwrgOUJQAAAu
+socket connected S775mDCocWyTepyQAAAx
+socket connected jnEacPPvGT9rogFvAAA0

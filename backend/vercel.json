@@ -13,7 +13,7 @@
     }
   ],
   "env": {
-    "MONGODB_URI": "@mongodb_uri",
+    "MONGO_URI": "@mongodb_uri",
     "NODE_ENV": "production",
     "PORT": "3000"
   }
