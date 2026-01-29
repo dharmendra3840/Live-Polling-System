@@ -56,19 +56,6 @@ Creates `dist/` with static assets
 
 ---
 
-## 🌐 Deployment
-
-See [DEPLOY.md](DEPLOY.md) for complete instructions on deploying to **Vercel** (both backend and frontend).
-
-**TL;DR:**
-1. Create `vercel.json` in both `backend/` and `frontend/` (see DEPLOY.md)
-2. Push to GitHub
-3. Connect repos to Vercel
-4. Set environment variables
-5. Auto-deploy on push
-
----
-
 ## 📋 Features
 
 - ✅ Teachers create polls with multiple choice questions
@@ -133,7 +120,6 @@ intervue/
 │   └── vercel.json
 │
 ├── README.md (this file)
-├── DEPLOY.md (deployment guide)
 └── .gitignore
 ```
 
