@@ -1,21 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/handler.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": "src/**"
-      }
+  "functions": {
+    "api/handler.ts": {
+      "memory": 1024,
+      "maxDuration": 30
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/handler"
+      "dest": "api/handler.ts"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
