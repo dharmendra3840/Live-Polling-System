@@ -51,13 +51,12 @@ export default function Student() {
       console.log('✅ Socket.IO connected')
     }
     const handleDisconnect = () => {
-      setSocketError('Socket disconnected - using HTTP polling')
-      console.log('⚠️ Socket.IO disconnected')
+      setSocketError('Socket.IO disconnected')
+      console.warn('⚠️ Socket.IO disconnected')
     }
     const handleConnectError = (error: any) => {
-      // Socket.IO may fail on serverless - this is expected on Vercel
-      setSocketError(null) // Don't show error to user, API calls still work via HTTP
-      console.warn('⚠️ Socket.IO connection failed (normal on Vercel serverless):', error)
+      setSocketError(`Socket.IO error: ${error.message || 'connection failed'}`)
+      console.error('❌ Socket.IO connection error:', error)
     }
     const handlePollError = (data: any) => setSystemError(data?.error || 'server error')
     const handleKicked = () => setKicked(true)
