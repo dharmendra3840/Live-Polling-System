@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const API = import.meta.env.VITE_API || 'http://localhost:4000'
+const API = import.meta.env.VITE_API || 'https://live-polling-system-backend-q439.onrender.com'
 
 export default function PollHistory({ embedded = false }: { embedded?: boolean }) {
   const [polls, setPolls] = useState<any[]>([])

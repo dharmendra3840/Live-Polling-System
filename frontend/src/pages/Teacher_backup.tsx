@@ -5,7 +5,7 @@ import usePollTimer from '../hooks/usePollTimer'
 import ChatPopup from '../components/ChatPopup'
 import PollHistory from './PollHistory'
 
-const API = import.meta.env.VITE_API || 'http://localhost:4000'
+const API = import.meta.env.VITE_API || 'https://live-polling-system-backend-q439.onrender.com'
 
 export default function Teacher() {
   const [question, setQuestion] = useState('')
