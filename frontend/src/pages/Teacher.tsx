@@ -128,7 +128,6 @@ export default function Teacher() {
         socket.emit('leave_room', { pollId: activePoll._id, role: 'teacher' })
       }
     } catch (e) {
-      // ignore socket errors
     }
     setActivePoll(null)
     setQuestion('')

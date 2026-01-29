@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
 
-// startTime: server epoch ms when poll started
-// duration: seconds
-// serverTime: server epoch ms returned alongside startTime to compute client offset
 export default function usePollTimer(startTime: number | undefined, duration: number | undefined, serverTime: number | undefined) {
   const [remaining, setRemaining] = useState<number>(duration ?? 0)
 
@@ -10,7 +7,6 @@ export default function usePollTimer(startTime: number | undefined, duration: nu
     if (!startTime || !duration) return
 
     const now = Date.now()
-    // compute approximate client-server offset
     const offset = serverTime ? now - serverTime : 0
     const computeRemaining = () => Math.max(0, Math.round(duration - (Date.now() - startTime - offset) / 1000))
 

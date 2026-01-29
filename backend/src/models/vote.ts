@@ -7,7 +7,6 @@ const VoteSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 })
 
-// ensure one vote per session per poll
 VoteSchema.index({ pollId: 1, sessionId: 1 }, { unique: true })
 
 export const VoteModel = mongoose.model('Vote', VoteSchema)

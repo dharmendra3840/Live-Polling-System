@@ -2,7 +2,6 @@ import { PollModel } from '../models/poll'
 import { VoteModel } from '../models/vote'
 import { ensureDbConnection } from '../utils/db'
 
-// Simple ID generator
 function generateId(length: number = 6): string {
   const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
   let result = ''
@@ -54,7 +53,6 @@ export async function createPoll(question: string, options: string[], duration =
 
 export async function startPoll(pollId: string) {
   ensureDbConnection()
-  // enforce only one active poll at a time
   const active = await PollModel.findOne({ status: 'active' })
   if (active) {
     const updated = await maybeEndPollIfExpired(active)
@@ -100,14 +98,8 @@ export async function maybeEndPollIfAllAnswered(pollId: string, expectedCount: n
   if (poll.status !== 'active') return poll
   return endPoll(poll)
 }
-
-/**
- * Add a vote ensuring DB-level uniqueness using VoteModel unique index on (pollId, sessionId).
- * This prevents duplicate votes even if clients retry or multiple server instances are used.
- */
 export async function addVote(pollId: string, optionId: string, sessionId: string) {
   ensureDbConnection()
-  // ensure poll and option exist
   const poll = await PollModel.findById(pollId)
   if (!poll) throw withCode('Poll not found', 'POLL_NOT_FOUND')
   if (poll.status !== 'active') {
@@ -121,16 +113,12 @@ export async function addVote(pollId: string, optionId: string, sessionId: strin
   if (!opt) throw withCode('Option not found', 'OPTION_NOT_FOUND')
 
   try {
-    // create a Vote document; unique index on (pollId, sessionId) will throw on duplicates
     await VoteModel.create({ pollId: poll._id, optionId, sessionId })
 
-    // increment the option's vote count atomically
     await PollModel.updateOne({ _id: pollId, 'options.id': optionId }, { $inc: { 'options.$.votes': 1 } })
 
-    // return updated poll
     return PollModel.findById(pollId)
   } catch (err: any) {
-    // duplicate key error -> already voted
     if (err && err.code === 11000) {
       throw withCode('already voted', 'ALREADY_VOTED')
     }

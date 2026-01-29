@@ -33,7 +33,7 @@ export default function Student() {
     try {
       sessionStorage.setItem(key, value)
     } catch {
-      // ignore storage errors (private mode / blocked storage)
+    }
     }
   }
 
@@ -93,7 +93,6 @@ export default function Student() {
   useEffect(() => {
     if (!socket) return
     const handlePollState = (data: any) => {
-      // data: { poll, serverTime }
       const nextPoll = data?.poll
       if (!nextPoll) {
         setPoll(null)
@@ -120,7 +119,6 @@ export default function Student() {
   useEffect(() => {
     if (!socket || !joined || !sessionId) return
     socket.emit('join_room', { role: 'student', sessionId, name })
-    // ask for current active poll state (state recovery)
     socket.emit('request_state', {}, (res: any) => {
       if (res && res.ok === false && res.error && res.error !== 'no active poll') {
         setSystemError(res.error)

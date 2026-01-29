@@ -18,7 +18,6 @@ const frontendOrigin = process.env.FRONTEND_ORIGIN
 app.use(cors({ origin: frontendOrigin, credentials: true }))
 app.use(express.json())
 
-// Health check
 app.get('/', (req, res) => {
   res.json({ status: 'ok', message: 'Intervue Poll Backend', hasSocketIO: true })
 })
@@ -34,7 +33,6 @@ const io = new Server(server, {
 
 setupPollSocket(io)
 
-// MongoDB connection
 let mongoConnected = false
 async function connectDB() {
   if (mongoConnected) return
@@ -59,5 +57,4 @@ async function start() {
 
 start().catch(console.error)
 
-// Export app for any serverless platform that supports WebSocket
 export default app

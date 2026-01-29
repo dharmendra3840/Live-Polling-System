@@ -15,7 +15,6 @@ export function setupPollSocket(io: Server) {
 
     socket.on('join_room', (data: any) => handleJoinRoom(io, socket, data))
 
-    // request_state: client asks for current active poll or specific poll
     socket.on('request_state', (data: any, cb: any) => handleRequestState(socket, data, cb))
 
     socket.on('poll_started', (data: any) => handlePollStarted(io, data))
