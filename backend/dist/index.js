@@ -13,7 +13,7 @@ const pollRoutes_1 = __importDefault(require("./routes/pollRoutes"));
 const pollSocket_1 = require("./socket/pollSocket");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const defaultOrigins = ['http://localhost:5173', 'http://localhost:5174'];
+const defaultOrigins = ['http://localhost:5173', 'http://localhost:5174', /vercel\.app$/];
 const frontendOrigin = process.env.FRONTEND_ORIGIN
     ? process.env.FRONTEND_ORIGIN.split(',').map((origin) => origin.trim()).filter(Boolean)
     : defaultOrigins;
@@ -26,8 +26,15 @@ app.get('/', (req, res) => {
 app.use('/api/polls', pollRoutes_1.default);
 const port = process.env.PORT || 4000;
 const server = http_1.default.createServer(app);
-const io = new socket_io_1.Server(server, { cors: { origin: frontendOrigin } });
-(0, pollSocket_1.setupPollSocket)(io);
+// Socket.IO - only initialize if NOT on Vercel serverless
+let io = null;
+if (process.env.VERCEL !== '1') {
+    io = new socket_io_1.Server(server, { cors: { origin: frontendOrigin } });
+    (0, pollSocket_1.setupPollSocket)(io);
+}
+else {
+    console.log('⚠️  Socket.IO disabled on Vercel serverless - using HTTP polling');
+}
 // MongoDB connection
 let mongoConnected = false;
 async function connectDB() {

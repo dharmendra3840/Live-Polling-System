@@ -10,7 +10,7 @@ import { setupPollSocket } from './socket/pollSocket'
 dotenv.config()
 
 const app = express()
-const defaultOrigins = ['http://localhost:5173', 'http://localhost:5174']
+const defaultOrigins = ['http://localhost:5173', 'http://localhost:5174', /vercel\.app$/]
 const frontendOrigin = process.env.FRONTEND_ORIGIN
   ? process.env.FRONTEND_ORIGIN.split(',').map((origin) => origin.trim()).filter(Boolean)
   : defaultOrigins
@@ -28,9 +28,14 @@ app.use('/api/polls', pollRoutes)
 const port = process.env.PORT || 4000
 const server = http.createServer(app)
 
-const io = new Server(server, { cors: { origin: frontendOrigin } })
-
-setupPollSocket(io)
+// Socket.IO - only initialize if NOT on Vercel serverless
+let io: any = null
+if (process.env.VERCEL !== '1') {
+  io = new Server(server, { cors: { origin: frontendOrigin } })
+  setupPollSocket(io)
+} else {
+  console.log('⚠️  Socket.IO disabled on Vercel serverless - using HTTP polling')
+}
 
 // MongoDB connection
 let mongoConnected = false

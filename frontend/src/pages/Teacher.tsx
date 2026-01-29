@@ -21,7 +21,12 @@ export default function Teacher() {
   const [systemError, setSystemError] = useState<string | null>(null)
 
   useEffect(() => {
-    const s = io(API)
+    const s = io(API, {
+      reconnection: true,
+      reconnectionDelay: 1000,
+      reconnectionDelayMax: 5000,
+      reconnectionAttempts: 5
+    })
     setSocket(s)
 
     const handlePollState = (data: any) => {
@@ -35,9 +40,19 @@ export default function Teacher() {
     const handleVoteUpdate = (data: any) => setActivePoll({ ...(data.poll || {}), __serverTime: Date.now() })
     const handleParticipants = (data: any) => setParticipants(data.participants || [])
     const handlePollError = (data: any) => setSystemError(data?.error || 'server error')
-    const handleConnect = () => setSocketError(null)
-    const handleDisconnect = () => setSocketError('disconnected from server')
-    const handleConnectError = () => setSocketError('unable to connect to server')
+    const handleConnect = () => {
+      setSocketError(null)
+      console.log('✅ Socket.IO connected')
+    }
+    const handleDisconnect = () => {
+      setSocketError('Socket disconnected - using HTTP polling')
+      console.log('⚠️ Socket.IO disconnected')
+    }
+    const handleConnectError = (error: any) => {
+      // Socket.IO may fail on serverless - this is expected on Vercel
+      setSocketError(null) // Don't show error to user, API calls still work via HTTP
+      console.warn('⚠️ Socket.IO connection failed (normal on Vercel serverless):', error)
+    }
 
     s.on('poll_state', handlePollState)
     s.on('vote_update', handleVoteUpdate)
