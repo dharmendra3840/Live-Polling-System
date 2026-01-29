@@ -165,17 +165,3 @@ VITE_API=https://your-backend-url.vercel.app
 ```
 
 ---
-
-## 📝 License
-
-This project is part of the SDE intern assignment.
-
----
-
-## 💡 Support
-
-For deployment help, see [DEPLOY.md](DEPLOY.md).
-
-For code issues, check the backend/frontend READMEs:
-- [backend/README.md](backend/README.md)
-- [frontend/README.md](frontend/README.md)
